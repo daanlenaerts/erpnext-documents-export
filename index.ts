@@ -18,6 +18,7 @@ program.command('watch')
     .option('-t, --target-dir <dir>', 'target directory to save files', './')
     .option('-f, --print-format <format>', 'format to export')
     .option('-d, --date-field <field>', 'date field to use', 'posting_date')
+    .option('-ds, --docstatus <status>', 'docstatus to filter on')
     .option('--include-json', 'also export JSON file')
     .action(async (doctype: string, options: any) => {
         while (true) {
@@ -29,6 +30,7 @@ program.command('watch')
                     secret: program.opts().secret,
                     doctype: doctype,
                     lastTimestamp,
+                    docstatus: options.docstatus
                 });
                 let newLastTimestamp = lastTimestamp;
                 for (const doc of documents) {

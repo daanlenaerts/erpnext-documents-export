@@ -4,6 +4,7 @@ export interface ListDocumentsOptions {
     secret: string;
     doctype: string;
     lastTimestamp: string | null;
+    docstatus?: number;
 }
 
 export async function listDocuments(opts: ListDocumentsOptions){
@@ -14,10 +15,13 @@ export async function listDocuments(opts: ListDocumentsOptions){
         }
     };
 
-    let url = opts.url + `/api/resource/${opts.doctype}?fields=["name"]&order_by="modified"&limit_page_length=500`;
-    if(opts.lastTimestamp){
-        url += `&filters=[["modified", ">=", "${opts.lastTimestamp}"]]`;
-    }
+    let url = opts.url + `/api/resource/${opts.doctype}?` + new URLSearchParams({
+        fields: JSON.stringify(["name"]),
+        order_by: "modified",
+        limit_page_length: "500",
+        ...(opts.lastTimestamp ? { filters: JSON.stringify([["modified", ">=", opts.lastTimestamp]]) } : {}),
+        ...(opts.docstatus !== undefined ? { filters: JSON.stringify([["docstatus", "=", opts.docstatus]]) } : {})
+    }).toString();
 
     const res = await fetch(url, options);
 

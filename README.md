@@ -17,10 +17,10 @@ Alternatively you can run it with Bun directly.
 For ease of use this tool is distributed as a single binary. It runs on Windows, macOS and Linux.
 
 You can download it for different operating systems here:
-- [Linux x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.0.0/ede-linux-x64)
-- [macOS arm64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.0.0/ede-macos-arm64)
-- [macOS x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.0.0/ede-macos-x64)
-- [Windows x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.0.0/ede-windows-x64.exe)
+- [Linux x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.1.0/ede-linux-x64)
+- [macOS arm64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.1.0/ede-macos-arm64)
+- [macOS x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.1.0/ede-macos-x64)
+- [Windows x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.1.0/ede-windows-x64.exe)
 
 
 ### With Bun
@@ -59,6 +59,8 @@ bun build --compile --target=bun-darwin-x64 ./index.ts --outfile ede-macos-x64
 This project was created using `bun init` in bun v1.1.0. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
 
 ## Usage
+
+All general options:
 ```
 Options:
   -u, --url <url>            ERPNext URL
@@ -84,11 +86,12 @@ Options:
   -t, --target-dir <dir>       target directory to save files (default: "./")
   -f, --print-format <format>  format to export
   -d, --date-field <field>     date field to use (default: "posting_date")
+  -ds, --docstatus <status>    docstatus to filter on
   --include-json               also export JSON file
   -h, --help                   display help for command
 ```
 
-For example, to export all purchase invoices sorted by year/month:
+For example, to export all submitted purchase invoices sorted by year/month:
 ```bash
-ede-macos-arm64 -u https://your-erpnext-site.com -k YOUR_API_KEY -s YOUR_API_SECRET watch "Purchase Invoice" -t ./purchase-invoices
+ede-macos-arm64 -u https://your-erpnext-site.com -k YOUR_API_KEY -s YOUR_API_SECRET watch "Purchase Invoice" -t ./purchase-invoices -ds 1
 ```
