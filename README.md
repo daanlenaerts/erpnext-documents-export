@@ -1,4 +1,4 @@
-<p align="center">🗂️</p>
+<p align="center" style="font-size: 40px;">🗂️</p>
 <h1 align="center">ERPNext Documents Export</h1>
 
 A simple command line utility to automatically export ERPNext or Frappe documents to PDF (and JSON).

@@ -173,3 +173,8 @@ dist
 
 # Finder (MacOS) folder config
 .DS_Store
+
+/ede-linux-x64
+/ede-macos-arm64
+/ede-macos-x64
+/ede-windows-x64.exe
