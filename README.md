@@ -17,10 +17,11 @@ Alternatively you can run it with Bun directly.
 For ease of use this tool is distributed as a single binary. It runs on Windows, macOS and Linux.
 
 You can download it for different operating systems here:
-- [Linux x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.1.0/ede-linux-x64)
-- [macOS arm64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.1.0/ede-macos-arm64)
-- [macOS x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.1.0/ede-macos-x64)
-- [Windows x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.1.0/ede-windows-x64.exe)
+- [Linux x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.2.0/ede-linux-x64)
+- [macOS arm64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.2.0/ede-macos-arm64)
+- [macOS x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.2.0/ede-macos-x64)
+- [Windows x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.2.0/ede-windows-x64.exe)
+- [Windows x64 (baseline)](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.2.0/ede-windows-x64-baseline.exe)
 
 
 ### With Bun

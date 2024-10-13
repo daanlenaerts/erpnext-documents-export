@@ -15,12 +15,19 @@ export async function listDocuments(opts: ListDocumentsOptions){
         }
     };
 
+    const filters = [];
+    if (opts.lastTimestamp) {
+        filters.push(["modified", ">", opts.lastTimestamp]);
+    }
+    if (opts.docstatus !== undefined) {
+        filters.push(["docstatus", "=", opts.docstatus]);
+    }
+
     let url = opts.url + `/api/resource/${opts.doctype}?` + new URLSearchParams({
         fields: JSON.stringify(["name"]),
         order_by: "modified",
-        limit_page_length: "500",
-        ...(opts.lastTimestamp ? { filters: JSON.stringify([["modified", ">=", opts.lastTimestamp]]) } : {}),
-        ...(opts.docstatus !== undefined ? { filters: JSON.stringify([["docstatus", "=", opts.docstatus]]) } : {})
+        limit_page_length: "10",
+        filters: JSON.stringify(filters)
     }).toString();
 
     const res = await fetch(url, options);
