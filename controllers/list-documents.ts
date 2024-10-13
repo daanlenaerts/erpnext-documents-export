@@ -26,7 +26,7 @@ export async function listDocuments(opts: ListDocumentsOptions){
     let url = opts.url + `/api/resource/${opts.doctype}?` + new URLSearchParams({
         fields: JSON.stringify(["name"]),
         order_by: "modified",
-        limit_page_length: "10",
+        limit_page_length: "500",
         filters: JSON.stringify(filters)
     }).toString();
 
