@@ -16,7 +16,7 @@ You can download it for different operating systems here:
 - [Linux x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.0.0/ede-linux-x64)
 - [macOS arm64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.0.0/ede-macos-arm64)
 - [macOS x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.0.0/ede-macos-x64)
-- [Windows x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.0.0/ede-windows-x64)
+- [Windows x64](https://github.com/daanlenaerts/erpnext-documents-export/releases/download/v1.0.0/ede-windows-x64.exe)
 
 
 ## With Bun
