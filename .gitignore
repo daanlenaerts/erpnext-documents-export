@@ -178,3 +178,4 @@ dist
 /ede-macos-arm64
 /ede-macos-x64
 /ede-windows-x64.exe
+/ede-windows-x64-baseline.exe

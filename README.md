@@ -48,6 +48,9 @@ bun build --compile --target=bun-linux-x64 ./index.ts --outfile ede-linux-x64
 # For Windows x64
 bun build --compile --target=bun-windows-x64 ./index.ts --outfile ede-windows-x64
 
+# For Windows x64 (baseline version)
+bun build --compile --target=bun-windows-x64-baseline ./index.ts --outfile ede-windows-x64-baseline
+
 # For macOS arm64
 bun build --compile --target=bun-darwin-arm64 ./index.ts --outfile ede-macos-arm64
 

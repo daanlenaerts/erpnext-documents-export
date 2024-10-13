@@ -1,8 +1,8 @@
 import { exportToPdf } from "./controllers/export-to-pdf";
 import { listDocuments } from "./controllers/list-documents";
 import { getLastTimestamp, writeProgressFile } from "./controllers/progress-file";
+import { Command } from 'commander';
 
-const { Command } = require('commander');
 const program = new Command();
 
 program
