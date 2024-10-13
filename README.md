@@ -12,6 +12,12 @@ This simple tool does just that.
 
 For ease of use this tool is distributed as a single binary. It runs on Windows, macOS and Linux.
 
+You can download it for different operating systems here:
+- [Linux x64](https://google.com)
+- [macOS arm64]()
+- [macOS x64]()
+- [Windows x64]()
+
 
 ## With Bun
 
