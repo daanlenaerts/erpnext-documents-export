@@ -13,6 +13,15 @@ export interface ExportToPdfOptions {
     targetDir: string;
     printFormat?: string;
     includeJson?: boolean;
+    outputTemplate?: string;
+}
+
+function generateFilename(template: string | undefined, document: any, name: string): string {
+    if (!template) return name;
+    
+    return template.replace(/{(\w+)}/g, (match, key) => {
+        return document[key] || match;
+    });
 }
 
 export async function exportToPdf(opts: ExportToPdfOptions) {
@@ -50,8 +59,10 @@ export async function exportToPdf(opts: ExportToPdfOptions) {
             await mkdir(targetDir, { recursive: true });
         }
 
+        const baseFilename = generateFilename(opts.outputTemplate, document, opts.name);
+
         // Save the PDF file if it doesn't exist
-        const pdfFilename = path.join(targetDir, `${opts.name}.pdf`);
+        const pdfFilename = path.join(targetDir, `${baseFilename}.pdf`);
 
         if (await exists(pdfFilename)) {
             // Stop processing if the file already exists
@@ -63,7 +74,7 @@ export async function exportToPdf(opts: ExportToPdfOptions) {
 
         if (opts.includeJson) {
             // Save the json file
-            const jsonFilename = path.join(targetDir, `${opts.name}.json`);
+            const jsonFilename = path.join(targetDir, `${baseFilename}.json`);
             console.log(`Saving ${opts.doctype} ${opts.name} to ${jsonFilename}`);
             await Bun.write(jsonFilename, JSON.stringify(document));
         }

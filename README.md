@@ -91,6 +91,7 @@ Options:
   -f, --print-format <format>  format to export
   -d, --date-field <field>     date field to use (default: "posting_date")
   -ds, --docstatus <status>    docstatus to filter on
+  -ot, --output-template       output filename template (e.g. "{customer_name} - {name}")
   --include-json               also export JSON file
   -h, --help                   display help for command
 ```

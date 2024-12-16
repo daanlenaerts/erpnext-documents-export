@@ -19,6 +19,7 @@ program.command('watch')
     .option('-f, --print-format <format>', 'format to export')
     .option('-d, --date-field <field>', 'date field to use', 'posting_date')
     .option('-ds, --docstatus <status>', 'docstatus to filter on')
+    .option('-ot, --output-template <template>', 'output filename template e.g. "{customer_name} - {name}"', '{name}')
     .option('--include-json', 'also export JSON file')
     .action(async (doctype: string, options: any) => {
         while (true) {
@@ -45,7 +46,8 @@ program.command('watch')
                             dateField: options.dateField,
                             targetDir: options.targetDir,
                             printFormat: options.printFormat,
-                            includeJson: options.includeJson
+                            outputTemplate: options.outputTemplate,
+                            includeJson: options.includeJson,
                         });
 
                         if (exportedDocument !== null && (newLastTimestamp === null || exportedDocument.modified > newLastTimestamp)) {
