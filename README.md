@@ -6,6 +6,9 @@ A simple command line utility to automatically export ERPNext or Frappe document
 **Why?** While using ERPNext we were looking for a way to always have our submitted sales and purchase invoices available in PDF format, for easy referencing.
 This simple tool does just that.
 
+> [!NOTE]
+> Also looking for an easy way to import documents into ERPNext as attachments? Check out [erpnext-auto-attach](https://github.com/daanlenaerts/erpnext-auto-attach)!
+
 # How to use?
 
 ## Installation
